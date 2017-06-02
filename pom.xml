@@ -11,7 +11,7 @@
 
     <modules>
         <module>demo-service</module>
-        <module>webapp</module>
+        <module>web-app</module>
     </modules>
 
     <properties>

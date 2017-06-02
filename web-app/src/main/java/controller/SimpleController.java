@@ -23,4 +23,14 @@ public class SimpleController {
         return str;
     }
 
+//    @RequestMapping("/hello")
+//    public String getHello(){
+//        return "redirect:/hello.html";
+//    }
+//
+//    @RequestMapping("/index")
+//    public String getIndex(){
+//        return "redirect:/index.jsp";
+//    }
+
 }

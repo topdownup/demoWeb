@@ -27,28 +27,29 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>springmvc</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/</url-pattern>
 
-        <!--<url-pattern>/</url-pattern> 自动生成是这样的，不能这样使用，启动tomcat时会报出警告，使用时一定要用'*' -->
+        <!--<url-pattern>/*</url-pattern> 精准匹配，如果不设置静态资源，将无法访问诸如*.html的文件 -->
     </servlet-mapping>
 
+
     <!-- 过滤器 -->
-    <!--<filter>-->
-        <!--<filter-name>encodingFilter</filter-name>-->
-        <!--<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>-->
-        <!--<init-param>-->
-            <!--<param-name>encoding</param-name>-->
-            <!--<param-value>UTF-8</param-value>-->
-        <!--</init-param>-->
-        <!--<init-param>-->
-            <!--<param-name>forceEncoding</param-name>-->
-            <!--<param-value>true</param-value>-->
-        <!--</init-param>-->
-    <!--</filter>-->
-    <!--<filter-mapping>-->
-        <!--<filter-name>encodingFilter</filter-name>-->
-        <!--<url-pattern>/*</url-pattern>-->
-    <!--</filter-mapping>-->
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
     <welcome-file-list>
         <welcome-file>hello.html</welcome-file>
