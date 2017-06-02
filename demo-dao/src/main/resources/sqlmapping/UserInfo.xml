@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.danlu.versiontool.dao.UserInfoDao">
+  <sql id="QUERY_COLUMN_LIST">
+    id AS id,
+	uname AS uname,
+	email AS email,
+	user_type AS user_type
+
+  </sql>
+  
+  <insert id="insertUserInfo" parameterType="userInfo" useGeneratedKeys = "true" keyProperty ="id">
+    <![CDATA[
+      insert into user
+		(uname, email, user_type)
+	values
+		(#{uname}, #{email}, #{user_type})
+	]]>
+  </insert>
+
+  
+  <select id="getUserList" resultType="userInfo">
+	select 
+	<include refid="QUERY_COLUMN_LIST"/>
+   	from user order by id DESC
+  </select>
+
+  
+</mapper>

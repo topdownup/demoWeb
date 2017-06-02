@@ -10,6 +10,8 @@
     <version>1.0.0</version>
 
     <modules>
+        <module>demo-domain</module>
+        <module>demo-dao</module>
         <module>demo-service</module>
         <module>web-app</module>
     </modules>
