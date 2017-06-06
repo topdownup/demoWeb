@@ -1,7 +1,10 @@
+package domain;
+import java.io.Serializable;
+
 /**
  * Created by lixulong on 2017/6/2.
  */
-public class UserInfo {
+public class UserInfo implements Serializable {
     int id;
     String uname;
     String email;
